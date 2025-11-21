@@ -30,7 +30,7 @@ const TermsOfService = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <main className="max-w-4xl mx-auto px-6 py-16">
         
         <header className="mb-12 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 mb-6 text-indigo-600 dark:text-indigo-400">
