@@ -330,7 +330,7 @@ const App = () => {
           <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 dark:text-slate-600">
             <p>&copy; {new Date().getFullYear()} Manku LLC. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="#" className="hover:text-slate-900 dark:hover:text-slate-400">Privacy Policy</Link>
+              <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-slate-400">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-slate-900 dark:hover:text-slate-400">Terms of Service</Link>
             </div>
           </div>
