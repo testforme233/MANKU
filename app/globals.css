@@ -1,24 +1,46 @@
 @import "tailwindcss";
 
+/* --- 1. 核心配置：开启手动深色模式支持 --- */
+/* 这一行非常关键，它允许通过 HTML 标签上的 .dark 类来触发 dark: 前缀的样式 */
+@variant dark (&:where(.dark, .dark *));
+
+/* --- 2. 主题配置 (合并了你原有的变量 + 新增的动画) --- */
+@theme inline {
+  /* 你原有的变量映射 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* 新增：Manku 主页需要的自定义动画 */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scan {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+}
+
+/* --- 3. CSS 变量定义 (修改为支持手动切换) --- */
+/* 默认浅色模式 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 深色模式 - 使用 .dark 类名选择器而不是 @media */
+/* 这样 App.tsx 中的 toggleTheme 函数才能控制这些变量 */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* --- 4. 基础样式 --- */
 body {
   background: var(--background);
   color: var(--foreground);
