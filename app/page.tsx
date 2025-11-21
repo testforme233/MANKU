@@ -20,11 +20,12 @@ import {
 
 // 如果使用了 Next.js 的 Link 组件，请取消下面的注释并替换 <a href...>
 import Link from 'next/link';
+import { useTheme } from './components/ThemeProvider';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true); // 默认为深色
+  const { darkMode, toggleTheme } = useTheme();
 
   // 初始化主题逻辑
   useEffect(() => {
@@ -33,33 +34,8 @@ const App = () => {
     };
     window.addEventListener('scroll', handleScroll);
 
-    // 1. 读取本地存储
-    const storedTheme = localStorage.getItem('theme');
-    // 2. 判断是否应该使用深色模式 (本地存储为 dark 或 系统偏好为 dark)
-    if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setDarkMode(true);
-      document.documentElement.classList.add('dark');
-    } else {
-      setDarkMode(false);
-      document.documentElement.classList.remove('dark');
-    }
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // 切换主题函数
-  const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    
-    if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
