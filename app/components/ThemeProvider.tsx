@@ -10,17 +10,18 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // 1. 读取本地存储
+    // 1. 读取本地存储或系统设置
     const storedTheme = localStorage.getItem('theme');
-    // 2. 判断是否应该使用深色模式
-    if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setDarkMode(true);
+    const isDark = storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    setDarkMode(isDark);
+    
+    if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
-      setDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
   }, []);
