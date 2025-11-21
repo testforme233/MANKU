@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-sm">
               <span className="font-bold text-white">M</span>
             </div>
-            <span className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Manku LLC</span>
+            <span className="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Manku</span>
           </div>
           </Link>
           <Link href="/" className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1 transition-colors">
