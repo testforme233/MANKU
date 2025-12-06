@@ -21,8 +21,8 @@ export const MankuLogo: React.FC<IconProps> = ({ className = "", size = 32 }) =>
     >
       <defs>
         <linearGradient id="manku_gradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#6366f1" /> {/* Indigo-500 */}
-          <stop offset="100%" stopColor="#9333ea" /> {/* Purple-600 */}
+          <stop offset="0%" stopColor="#f472b6" /> {/* Soft Pink - Primary Color */}
+          <stop offset="100%" stopColor="#fb7185" /> {/* Rose-400 */}
         </linearGradient>
       </defs>
       {/* 背景圆角矩形 */}
