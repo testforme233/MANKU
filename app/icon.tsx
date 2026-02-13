@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og';
 
+export const dynamic = 'force-static';
+
 // 1. 配置图标尺寸
 export const size = {
   width: 32,
