@@ -9,12 +9,12 @@
   /* 核心配色 - Soft Chalk Pastel */
   --color-primary: #db2777;    /* Vivid Pink - WCAG AA contrast with white */
   --color-secondary: #94a3b8;  /* Dusty Blue/Grey */
-  --color-accent: #34d399;     /* Mint */
+  --color-accent: #10b981;     /* Emerald 500 */
   --color-background: #fff1f2; /* Pale Pink BG */
   --color-surface: #ffffff;    /* White Card */
   --color-text: #475569;       /* Slate Text */
   --color-muted: #cbd5e1;
-  --color-success: #34d399;
+  --color-success: #10b981;
   --color-warning: #fcd34d;
   --color-error: #fca5a5;
   --color-info: #7dd3fc;
@@ -32,7 +32,7 @@
 .dark {
   --color-primary: #be185d;    /* Pink 700 - WCAG AA contrast with white (4.56:1) */
   --color-secondary: #64748b;
-  --color-accent: #6ee7b7;
+  --color-accent: #34d399;
   --color-background: #1e293b; /* Deep Slate (Blackboard) */
   --color-surface: #334155;    /* Lighter Slate */
   --color-text: #f1f5f9;       /* Chalk White */
