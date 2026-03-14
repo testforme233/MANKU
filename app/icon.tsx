@@ -37,8 +37,8 @@ export default function Icon() {
         >
           <defs>
             <linearGradient id="manku_gradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#f472b6" />
-              <stop offset="100%" stopColor="#fb7185" />
+              <stop offset="0%" stopColor="#db2777" />
+              <stop offset="100%" stopColor="#e11d48" />
             </linearGradient>
           </defs>
           {/* 背景 */}
