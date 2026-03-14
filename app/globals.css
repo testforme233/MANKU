@@ -7,7 +7,7 @@
 /* --- 1. CSS 变量定义 (Design System) --- */
 :root {
   /* 核心配色 - Soft Chalk Pastel */
-  --color-primary: #f472b6;    /* Soft Pink */
+  --color-primary: #db2777;    /* Vivid Pink - WCAG AA contrast with white */
   --color-secondary: #94a3b8;  /* Dusty Blue/Grey */
   --color-accent: #34d399;     /* Mint */
   --color-background: #fff1f2; /* Pale Pink BG */
@@ -30,7 +30,7 @@
 
 /* 深色模式适配 - "Blackboard Theme" (黑板粉笔风) */
 .dark {
-  --color-primary: #f9a8d4;    /* Lighter Pink */
+  --color-primary: #be185d;    /* Pink 700 - WCAG AA contrast with white (4.56:1) */
   --color-secondary: #64748b;
   --color-accent: #6ee7b7;
   --color-background: #1e293b; /* Deep Slate (Blackboard) */

@@ -69,8 +69,8 @@ const App = () => {
 
   return (
     <div className="min-h-screen transition-colors duration-300 overflow-x-hidden selection:bg-accent selection:text-white">
-      
-      {/* Navigation */}
+
+      {/* Navigation - outside main for semantic correctness */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-md border-b-[4px] border-secondary/20 py-3' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           {/* Logo Area */}
@@ -87,8 +87,9 @@ const App = () => {
             <button onClick={() => scrollToSection('about')} className="text-text font-bold hover:text-primary transition-colors">About Us</button>
             
             {/* Theme Toggle */}
-            <button 
-              onClick={toggleTheme} 
+            <button
+              onClick={toggleTheme}
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
               className="p-2 rounded-full border-[3px] border-secondary bg-surface text-secondary hover:border-primary hover:text-primary transition-all"
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -101,7 +102,7 @@ const App = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-4">
-            <button onClick={toggleTheme} className="text-text">
+            <button onClick={toggleTheme} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} className="text-text">
               {darkMode ? <Sun size={24} /> : <Moon size={24} />}
             </button>
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-text">
@@ -120,6 +121,7 @@ const App = () => {
         )}
       </nav>
 
+      <main>
       {/* Hero Section */}
       <header className="relative pt-40 pb-24 px-6 overflow-hidden">
         {/* Abstract Background Shapes (Pastel Blobs) */}
@@ -132,7 +134,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white dark:bg-surface border-[3px] border-text mb-8 animate-fade-in-up">
             <Heart size={18} className="text-primary fill-primary" />
-            <span className="text-sm font-bold text-text dark:text-primary uppercase tracking-wider">Lifestyle meets Tech</span>
+            <span className="text-sm font-bold text-text uppercase tracking-wider">Lifestyle meets Tech</span>
           </div>
           
           <h1 className="font-heading text-5xl md:text-7xl font-black mb-8 text-text leading-[1.1]">
@@ -232,7 +234,7 @@ const App = () => {
                       {/* Scanning Bar (Restyled) */}
                       <div className="absolute top-0 left-0 w-full h-2 bg-accent rounded-full animate-[scan_3s_ease-in-out_infinite] shadow-[0_0_20px_var(--color-accent)]"></div>
                       
-                      <div className="absolute bottom-6 bg-text px-4 py-2 rounded-xl font-bold text-xs tracking-wider text-white dark:text-primary">
+                      <div className="absolute bottom-6 bg-text px-4 py-2 rounded-xl font-bold text-xs tracking-wider text-white dark:text-white">
                         SCANNING...
                       </div>
                     </div>
@@ -306,6 +308,8 @@ const App = () => {
         </div>
       </section>
 
+      </main>
+
       {/* Footer */}
       <footer id="contact" className="pt-20 pb-10 px-6">
         <div className="max-w-7xl mx-auto">
@@ -326,7 +330,7 @@ const App = () => {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h4 className="font-heading font-bold text-xl text-primary mb-2">Get in Touch</h4>
+              <h2 className="font-heading font-bold text-xl text-primary mb-2">Get in Touch</h2>
               <Link href="mailto:admin@manku.org" className="flex items-center gap-2 hover:text-primary transition-colors font-medium text-white/90 dark:text-text/90">
                 <Mail size={18} /> admin@manku.org
               </Link>
